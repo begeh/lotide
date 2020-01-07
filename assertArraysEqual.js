@@ -1,4 +1,4 @@
-const assertArraysEqual = function(actual, expected) {
+const eqArrays = function(actual, expected) {
   let result;
   if(actual.length !== expected.length){
     result = false;
@@ -10,17 +10,15 @@ const assertArraysEqual = function(actual, expected) {
       }
     }
   }
+  return result;
+};
 
-  if (result === true) {
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected)) {
     console.log(`😀😀😀Assertion Passed: ${actual} === ${expected}`);
   } else {
     console.log(`😔😔😔Assertion Failed: ${actual} !== ${expected}`);
   }
-};
-
-const eqArrays = function(actual, expected) {
-
-  return result;
 };
 
 assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
