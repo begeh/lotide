@@ -1,11 +1,11 @@
 const eqArrays = function(actual, expected) {
   let result;
-  if(actual.length !== expected.length){
+  if (actual.length !== expected.length) {
     result = false;
-  } else{
+  } else {
     result = true;
-    for(let i = 0; i < actual.length; i++){
-      if(actual[i] !== expected[i]){
+    for (let i = 0; i < actual.length; i++) {
+      if (actual[i] !== expected[i]) {
         result = false;
       }
     }
@@ -21,16 +21,16 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-const without = function(source, itemsToRemove){
-  let arr = []; 
-  for(let i = 0; i < source.length; i++){
+const without = function(source, itemsToRemove) {
+  let arr = [];
+  for (let i = 0; i < source.length; i++) {
     let count = 0;
-    for(let j = 0; j < itemsToRemove.length; j++){
-      if(source[i] === itemsToRemove[j]){
+    for (let j = 0; j < itemsToRemove.length; j++) {
+      if (source[i] === itemsToRemove[j]) {
         count += 1;
       }
     }
-    if(count === 0){
+    if (count === 0) {
       arr.push(source[i]);
     }
   }
