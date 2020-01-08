@@ -18,7 +18,9 @@ const countLetters = function(arg) {
   }
   return result;
 }
-const args = process.argv.slice(2);;
-console.log(countLetters(args[0]));
-//args[0] is the word password, which we input each time
-assertEqual((countLetters(args[0]).p), 1);
+const args = process.argv.slice(2);
+let noSpaces = args.join(" ").split(" ").join("");
+console.log(noSpaces);
+console.log(countLetters(noSpaces));
+//the argument being passed is the word "lighthouse in the house", which we input each time. you can manually try as well to check.
+assertEqual((countLetters(noSpaces).h), 4);
