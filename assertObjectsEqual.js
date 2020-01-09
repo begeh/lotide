@@ -1,5 +1,3 @@
-
-
 const eqObjects = function(object1, object2) {
   let obj1 = Object.keys(object1);
   let obj2 = Object.keys(object2);
