@@ -7,19 +7,25 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(actual, expected) {
-  let result;
-  if(actual.length !== expected.length){
+  let result = true;
+  if (actual.length !== expected.length) {
     result = false;
-  } else{
-    result = true;
-    for(let i = 0; i < actual.length; i++){
-      if(actual[i] !== expected[i]){
-        result = false;
-      }
+  }
+  for (let i = 0; i < actual.length; i++) {
+    if (actual[i] !== expected[i]) {
+      result = false;
+    }
+    if (Array.isArray(actual[i]) && Array.isArray(expected[i])) {
+      result = eqArrays(actual[i], expected[i]);
     }
   }
   return result;
 };
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertEqual((eqArrays["1", "2", "3"], ["1", "2", 3]), true);
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
+
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true); // => true
+
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false); // => false
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false); // => false
