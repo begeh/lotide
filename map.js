@@ -31,13 +31,15 @@ const map = function(array, callback) {
   return results;
 };
 
-const results1 = map(words, word => word[0]);
-console.log(results1);
+module.exports = map;
 
-assertArraysEqual(map(["Cat", "Camel", "Dog"], word => word[0]), ["C", "C", "D"]);
+// const results1 = map(words, word => word[0]);
+// console.log(results1);
 
-assertArraysEqual(map(["Cat", "Camel", "Dog"], word => word[1]), ["a", "a", "o"]);
+// assertArraysEqual(map(["Cat", "Camel", "Dog"], word => word[0]), ["C", "C", "D"]);
 
-assertArraysEqual(map(["Cat", "Camel", "Dog"], word => word.length), [3, 5, 3]);
+// assertArraysEqual(map(["Cat", "Camel", "Dog"], word => word[1]), ["a", "a", "o"]);
 
-assertArraysEqual(map(["Cat", "Camel", "Dog"], word => word + "AddOnString"), ["CatAddOnString", "CamelAddOnString", "DogAddOnString"]);
+// assertArraysEqual(map(["Cat", "Camel", "Dog"], word => word.length), [3, 5, 3]);
+
+// assertArraysEqual(map(["Cat", "Camel", "Dog"], word => word + "AddOnString"), ["CatAddOnString", "CamelAddOnString", "DogAddOnString"]);
