@@ -1,4 +1,3 @@
-// const assertEqual = require('./assertEqual');
 const tail = function(arr) {
   let array = [];
   if(arr.length === 1 || arr.length === 0){
